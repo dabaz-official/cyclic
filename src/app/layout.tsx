@@ -28,6 +28,20 @@ export const metadata: Metadata = {
     template: "%s | Cyclic"
   },
   description: "A minimalist tool for note-taking and note-management. Embrace a world of clarity and focus, where every note propels you towards seamless productivity.",
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/images/logos/favicon-light.svg",
+        href: "/images/logos/favicon-light.svg",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/images/logos/favicon-dark.svg",
+        href: "/images/logos/favicon-dark.svg",
+      }
+    ]
+  }
 };
 
 export default function RootLayout({
