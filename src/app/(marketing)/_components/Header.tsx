@@ -3,9 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Button } from "@cyclic/components/ui/button";
+import { Logo } from "./Logo";
 
 export default function MarketingHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -16,23 +15,17 @@ export default function MarketingHeader() {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Cyclic</span>
-            <Image
-              className="h-8 w-auto"
-              src="/images/logos/logo-light.svg"
-              width={8}
-              height={8}
-              alt="Cyclic"
-            />
+            <Logo />
           </a>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
         </div>
         <div className="flex flex-1 items-center justify-end gap-x-6">
-          <a href="/login" className="block text-sm lg:text-md font-semibold leading-6 text-gray-900 hover:underline transition">
+          <a href="/login" className="block text-sm lg:text-md font-medium leading-6 text-neutral-900 hover:underline transition">
             Log in
           </a>
           <Link href="/register">
-            <Button size="md" className="font-semibold">
+            <Button size="md" className="font-medium">
               Sign up
             </Button>
           </Link>
