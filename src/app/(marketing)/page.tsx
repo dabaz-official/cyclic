@@ -6,7 +6,7 @@ import { Hero } from "./_components/Hero";
 
 export default function MarketingPage() {
   return (
-    <main className="flex min-h-screen flex-col bg-white">
+    <main className="flex min-h-screen flex-col bg-white -z-10">
       <MarketingHeader />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl flex flex-col items-center justify-center md:justify-start text-center py-16 gap-y-24 flex-1">

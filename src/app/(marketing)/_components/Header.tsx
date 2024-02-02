@@ -1,18 +1,22 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useConvexAuth } from "convex/react";
+import { SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
+
 import { Button } from "@cyclic/components/ui/button";
-import { Logo } from "./Logo";
 import { useScrollTop } from "@cyclic/hooks/use-scroll-top";
 import { cn } from "@cyclic/lib/utils";
+import { Spinner } from "@cyclic/components/specific/spinner";
+import { Logo } from "./Logo";
+import Link from "next/link";
 
 export default function MarketingHeader() {
+  const { isAuthenticated, isLoading } = useConvexAuth();
   const scrolled = useScrollTop();
 
   return (
     <header className={cn(
-      "bg-white/80 dark:bg-black/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-20", scrolled && "border-b border-neutral-100 dark:border-neutral-900 shadow-sm"
+      "bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50", scrolled && "border-b border-neutral-200 shadow-sm"
     )}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
@@ -24,14 +28,35 @@ export default function MarketingHeader() {
         <div className="hidden lg:flex lg:gap-x-12">
         </div>
         <div className="flex flex-1 items-center justify-end gap-x-6">
-          <a href="/login" className="block text-sm lg:text-md font-medium leading-6 text-neutral-900 dark:text-neutral-100 hover:underline transition">
-            Log in
-          </a>
-          <Link href="/register">
-            <Button size="md" className="font-medium">
-              Sign up
-            </Button>
-          </Link>
+          {isLoading && (
+            <Spinner size="lg" />
+          )}
+          {!isAuthenticated && !isLoading && (
+            <>
+              <SignInButton mode="modal">
+                <button className="block text-sm lg:text-md font-medium leading-6 text-neutral-900 hover:underline transition">
+                  Log in
+                </button>
+              </SignInButton>
+              <SignUpButton mode="modal">
+                <Button size="md" className="bg-black text-white hover:bg-neutral-800">
+                  Sign up
+                </Button>
+              </SignUpButton>
+            </>
+          )}
+          {isAuthenticated && !isLoading && (
+            <>
+              <Button size="md" asChild className="bg-black text-white hover:bg-neutral-800">
+                <Link href="/notes">
+                  Enter Cyclic -&gt;
+                </Link>
+              </Button>
+              <UserButton
+                afterSignOutUrl="/"
+              />
+            </>
+          )}
         </div>
       </nav>
     </header>
