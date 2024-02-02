@@ -24,7 +24,7 @@ export const fontSerif = FontSerif({
 export const metadata: Metadata = {
   title: {
     absolute: "",
-    default: "Cyclic | Your Minimalist Note-Taking App",
+    default: "Cyclic | Your Minimalist Note Taking App",
     template: "%s | Cyclic"
   },
   description: "A minimalist tool for note-taking and note-management. Embrace a world of clarity and focus, where every note propels you towards seamless productivity.",
