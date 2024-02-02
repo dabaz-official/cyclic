@@ -5,7 +5,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 
 export default function Cookies() {
-  let [isOpen, setIsOpen] = useState(true)
+  let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
     setIsOpen(false)
@@ -18,12 +18,12 @@ export default function Cookies() {
   return (
     <>
       <div className="pb-4">
-        <button onClick={openModal} className="text-md leading-6 text-neutral-600 hover:text-neutral-900">
+        <button type="button" onClick={openModal} className="text-md leading-6 text-neutral-600 hover:text-neutral-900">
           Cookie
         </button>
       </div>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-30" onClose={closeModal}>
+        <Dialog open={isOpen} onClose={() => setIsOpen(false)} as="div" className="relative z-30">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
