@@ -1,14 +1,19 @@
-import { Button } from "@cyclic/components/ui/button";
+import { MarketingBanner } from "./_components/Banner";
+import { MarketingHeading } from "./_components/Heading";
+import { Hero } from "./_components/Hero";
+import { MarketingHeader } from "./_components/Header";
+import { Powerful } from "./_components/features/Powerful";
 
-export default function Home() {
+export default function MarketingPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center text-center p-24">
-      <p className="text-5xl font-bold mb-6">
-        Your Minimalist Note-Taking App
-      </p>
-      <Button>
-        Enjoy Cyclic -&gt;
-      </Button>
+    <main className="flex min-h-screen flex-col">
+      <MarketingBanner />
+      <MarketingHeader />
+      <div className="flex flex-col items-center justify-center md:justify-start text-center gap-y-8 flex-1 px-6 pb-10">
+        <MarketingHeading />
+        <Hero />
+        <Powerful />
+      </div>
     </main>
   );
 }
