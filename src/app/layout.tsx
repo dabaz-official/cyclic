@@ -43,6 +43,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
+          storageKey="cyclic-theme-2"
         >
           {children}
         </ThemeProvider>
