@@ -1,25 +1,8 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
-import { Inconsolata as FontMono } from "next/font/google";
-import { Playfair_Display as FontSerif } from "next/font/google";
 
 import "@cyclic/styles/globals.css";
 import { cn } from "@cyclic/lib/utils"
-
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-export const fontMono = FontMono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
-
-export const fontSerif = FontSerif({
-  subsets: ["latin"],
-  variable: "--font-serif",
-})
+import { fontMono, fontSans, fontSerif } from "./fonts";
 
 export const metadata: Metadata = {
   title: {
