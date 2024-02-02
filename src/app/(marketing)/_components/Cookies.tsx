@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from '@cyclic/components/ui/button'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
@@ -15,15 +17,6 @@ export default function Cookies() {
 
   return (
     <>
-      <Button
-        type="button"
-        size="tn"
-        onClick={openModal}
-        className="flex-none text-sm"
-      >
-        Learn more
-      </Button>
-
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -39,7 +32,7 @@ export default function Cookies() {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex min-h-full items-center justify-center p-4 text-center mr-3">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -54,7 +47,7 @@ export default function Cookies() {
                     as="h3"
                     className="text-lg font-medium leading-6 text-neutral-900"
                   >
-                    Yes, we don&rsquo;t use cookies currently.
+                    Just to let you know, we don&rsquo;t use cookies currently.
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-neutral-500">
@@ -65,7 +58,7 @@ export default function Cookies() {
                   <div className="mt-4">
                     <Button
                       type="button"
-                      size="sm"
+                      size="md"
                       className="inline-flex justify-center text-sm"
                       onClick={closeModal}
                     >
