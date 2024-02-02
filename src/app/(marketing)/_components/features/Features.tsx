@@ -33,8 +33,8 @@ export default function MarketingFeatures() {
   return (
     <div>
       <div className="mx-auto lg:text-center space-y-6">
-        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Simple but <span className="text-blue-600 dark:text-blue-400">powerful</span></h2>
-        <p className="text-md sm:text-lg text-neutral-900 dark:text-neutral-100">
+        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-neutral-900">Simple but <span className="text-blue-600">powerful</span></h2>
+        <p className="text-md sm:text-lg text-neutral-900">
           We keep everything simple while we are making Cyclic powerful for the best note-taking solution.
         </p>
       </div>
@@ -42,13 +42,13 @@ export default function MarketingFeatures() {
         <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
           {features.map((feature) => (
             <div key={feature.name} className="relative pl-16 text-left">
-              <dt className="text-base font-semibold leading-7 text-neutral-900 dark:text-neutral-100">
-                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 dark:bg-blue-400">
-                  <feature.icon className="h-6 w-6 text-white dark:text-black" aria-hidden="true" />
+              <dt className="text-base font-semibold leading-7 text-neutral-900">
+                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                  <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                 </div>
                 {feature.name}
               </dt>
-              <dd className="mt-2 text-base leading-7 text-neutral-700 dark:text-neutral-300">{feature.description}</dd>
+              <dd className="mt-2 text-base leading-7 text-neutral-700">{feature.description}</dd>
             </div>
           ))}
         </dl>

@@ -20,7 +20,7 @@ export default function Blocky() {
           <Image
             src="/images/landing-page/blocky.svg"
             fill
-            className="object-contain block dark:invert"
+            className="object-contain block"
             alt="Blocky illustration."
           />
         </div>

@@ -13,20 +13,20 @@ const today = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-black border border-neutral-100 dark:border-neutral-900">
+    <footer className="bg-white border border-neutral-100">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-8 lg:px-8">
         <Logo />
         <nav className="mt-6 -mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           {navigation.main.map((item) => (
             <div key={item.name} className="pb-4">
-              <a href={item.href} className="text-md leading-6 text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100">
+              <a href={item.href} className="text-md leading-6 text-neutral-700 hover:text-neutral-900">
                 {item.name}
               </a>
             </div>
           ))}
           <Cookies />
         </nav>
-        <p className="mt-6 text-center text-sm leading-5 text-neutral-700 dark:text-neutral-300">
+        <p className="mt-6 text-center text-sm leading-5 text-neutral-700">
           &copy; {today} DabWave, Ltd. All rights reserved.
         </p>
       </div>

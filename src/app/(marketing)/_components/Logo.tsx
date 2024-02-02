@@ -8,16 +8,9 @@ export const Logo = () => {
         height="40"
         width="40"
         alt="Logo"
-        className="h-8 w-auto block dark:hidden"
+        className="h-8 w-auto block"
       />
-      <Image
-        src="/images/logos/favicon-dark.svg"
-        height="40"
-        width="40"
-        alt="Logo"
-        className="h-8 w-auto hidden dark:block"
-      />
-      <p className="font-semibold text-lg tracking-tighter text-black dark:text-white">
+      <p className="font-semibold text-lg tracking-tighter text-black">
         Cyclic
       </p>
     </div>

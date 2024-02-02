@@ -18,7 +18,7 @@ export default function Cookies() {
   return (
     <>
       <div className="pb-4">
-        <button type="button" onClick={openModal} className="text-md leading-6 text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100">
+        <button type="button" onClick={openModal} className="text-md leading-6 text-neutral-700 hover:text-neutral-900">
           Cookie
         </button>
       </div>
@@ -47,15 +47,15 @@ export default function Cookies() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-950 p-6 text-left align-middle shadow-xl transition-all border border-neutral-200 dark:border-neutral-800">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-neutral-50 p-6 text-left align-middle shadow-xl transition-all border border-neutral-200">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-neutral-900 dark:text-neutral-100"
+                    className="text-lg font-medium leading-6 text-neutral-900"
                   >
                     Just to let you know, we don&rsquo;t use cookies currently.
                   </Dialog.Title>
                   <div className="mt-2">
-                    <p className="text-sm text-neutral-700 dark:text-neutral-300">
+                    <p className="text-sm text-neutral-700">
                       But we may use strictly necessary cookies in the future, only for our site to function.
                     </p>
                   </div>
