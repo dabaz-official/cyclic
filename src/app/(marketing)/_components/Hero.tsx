@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Hero = () => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 mt-12">
       <h1 className="text-5xl sm:text-6xl font-bold tracking-tight">
         Your Minimalist <span className="relative whitespace-nowrap text-lime-600">
           Note-Taking
