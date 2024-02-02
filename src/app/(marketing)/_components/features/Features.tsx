@@ -24,7 +24,7 @@ const features = [
   {
     name: 'Advanced security',
     description:
-      'We safeguard your data with robust encryption, reinforce access through multi-factor authentication, and continuously fortify our defenses with regular security audits.',
+      'We safeguard your data with robust encryption, reinforce access through multi-factor authentication, and more.',
     icon: FingerPrintIcon,
   },
 ]
