@@ -4,6 +4,7 @@ import "@cyclic/styles/globals.css";
 import { cn } from "@cyclic/lib/utils"
 import { fontMono, fontSans, fontSerif } from "./fonts";
 import { ThemeProvider } from "@cyclic/components/providers/theme-provider";
+import { ConvexClientProvider } from "@cyclic/components/providers/convex-provider";
 
 export const metadata: Metadata = {
   title: {
@@ -39,14 +40,15 @@ export default function RootLayout({
         "min-h-screen bg-background font-sans antialiased",
         fontSans.variable, fontMono.variable, fontSerif.variable
       )}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          storageKey="cyclic-theme-2"
-        >
-          {children}
-        </ThemeProvider>
+        <ConvexClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            storageKey="cyclic-theme-2"
+          >
+            {children}
+          </ThemeProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );

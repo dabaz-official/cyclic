@@ -23,5 +23,5 @@ export const ConvexClientProvider = ({
         {children}
       </ConvexProviderWithClerk>
     </ClerkProvider>
-  )
-}
+  );
+};
