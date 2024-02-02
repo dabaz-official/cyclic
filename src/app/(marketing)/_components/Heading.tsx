@@ -17,7 +17,7 @@ export const MarketingHeading = () => {
       <h3 className="text-xl sm:text-2xl text-neutral-900 font-medium">
         Cyclic is the minimalist tool where every note propels you towards seamless productivity.
       </h3>
-      <Button className="text-md md:text-lg font-medium">
+      <Button className="text-md md:text-lg">
         Enter Cyclic -&gt;
       </Button>
     </div>

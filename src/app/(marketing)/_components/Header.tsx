@@ -17,7 +17,7 @@ export const MarketingHeader = () => {
           />
         </a>
         <div className="hidden md:flex md:gap-x-12">
-          <Button size="sm" className="text-sm font-semibold leading-6">
+          <Button size="sm" className="text-sm leading-6">
             Enter Cyclic
           </Button>
         </div>

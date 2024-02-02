@@ -5,7 +5,7 @@ import Cookies from "./Cookies";
 
 export const MarketingBanner = () => {
   return (
-    <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-neutral-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+    <div className="fixed isolate flex items-center gap-x-6 overflow-hidden bg-neutral-50/80 backdrop-blur px-6 py-2 sm:px-3.5 sm:before:flex-1 bottom-0 left-0 right-0 z-10 border-t border-neutral-200">
       <div
         className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
         aria-hidden="true"

@@ -1,3 +1,4 @@
+import { Button } from '@cyclic/components/ui/button'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 
@@ -14,13 +15,14 @@ export default function Cookies() {
 
   return (
     <>
-      <button
+      <Button
         type="button"
+        size="tn"
         onClick={openModal}
-        className="flex-none rounded-md bg-neutral-900 px-3 py-1 text-sm font-medium text-white shadow-sm hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900"
+        className="flex-none text-sm"
       >
-        Learn more <span aria-hidden="true">-&gt;</span>
-      </button>
+        Learn more
+      </Button>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -52,7 +54,7 @@ export default function Cookies() {
                     as="h3"
                     className="text-lg font-medium leading-6 text-neutral-900"
                   >
-                    Yes, we don&rsquo;t use cookies.
+                    Yes, we don&rsquo;t use cookies currently.
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-neutral-500">
@@ -61,13 +63,14 @@ export default function Cookies() {
                   </div>
 
                   <div className="mt-4">
-                    <button
+                    <Button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      size="sm"
+                      className="inline-flex justify-center text-sm"
                       onClick={closeModal}
                     >
                       Got it
-                    </button>
+                    </Button>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
