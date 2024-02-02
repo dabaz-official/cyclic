@@ -2,15 +2,18 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@cyclic/components/ui/button";
 import { Logo } from "./Logo";
+import { useScrollTop } from "@cyclic/hooks/use-scroll-top";
+import { cn } from "@cyclic/lib/utils";
 
 export default function MarketingHeader() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const scrolled = useScrollTop();
 
   return (
-    <header className="bg-white/80 backdrop-blur-lg border-b border-neutral-100 fixed top-0 left-0 right-0 z-20">
+    <header className={cn(
+      "bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-20", scrolled && "border-b border-neutral-100 shadow-sm"
+    )}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
