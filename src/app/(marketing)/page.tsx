@@ -1,5 +1,6 @@
 import Cookies from "./_components/Cookies";
 import MarketingFeatures from "./_components/features/Features";
+import Footer from "./_components/Footer";
 import MarketingHeader from "./_components/Header";
 import { Hero } from "./_components/Hero";
 
@@ -13,6 +14,7 @@ export default function MarketingPage() {
           <MarketingFeatures />
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

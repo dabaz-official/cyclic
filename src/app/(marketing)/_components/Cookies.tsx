@@ -17,8 +17,13 @@ export default function Cookies() {
 
   return (
     <>
+      <div className="pb-4">
+        <button onClick={openModal} className="text-md leading-6 text-neutral-600 hover:text-neutral-900">
+          Cookie
+        </button>
+      </div>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-30" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -32,7 +37,7 @@ export default function Cookies() {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center mr-3">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
