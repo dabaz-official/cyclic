@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "@cyclic/styles/globals.css";
 import { cn } from "@cyclic/lib/utils"
 import { fontMono, fontSans, fontSerif } from "./fonts";
+import { ThemeProvider } from "@cyclic/components/providers/theme-provider";
 
 export const metadata: Metadata = {
   title: {
@@ -37,10 +38,15 @@ export default function RootLayout({
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
         fontSans.variable, fontMono.variable, fontSerif.variable
-      )}
-    >
-      {children}
-    </body>
+      )}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
