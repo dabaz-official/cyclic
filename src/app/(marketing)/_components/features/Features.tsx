@@ -1,30 +1,30 @@
 "use client";
 
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, PaintBrushIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
     name: 'Click to publish',
     description:
-      'Just one click to make your notes online.',
+      'Just a click, and your note transforms into an accessible link. Then, you can share this link with anyone, anywhere.',
     icon: CloudArrowUpIcon,
   },
   {
-    name: 'SSL certificates',
+    name: 'Simple design',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: LockClosedIcon,
+      'Our core design principle is to let you concentrate more, rather than creating more distractions.',
+    icon: PaintBrushIcon,
   },
   {
-    name: 'Simple queues',
+    name: 'Stay synced',
     description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+      'Your notes are stored in the cloud, allowing you to use Cyclic seamlessly on any device with internet access.',
     icon: ArrowPathIcon,
   },
   {
     name: 'Advanced security',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+      'We safeguard your data with robust encryption, reinforce access through multi-factor authentication, and continuously fortify our defenses with regular security audits.',
     icon: FingerPrintIcon,
   },
 ]
