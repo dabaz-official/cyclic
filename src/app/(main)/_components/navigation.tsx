@@ -1,16 +1,19 @@
 "use client";
 
+import { ElementRef, useEffect, useRef, useState } from "react";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
+import { useQuery } from "convex/react";
 
 import { cn } from "@cyclic/lib/utils";
 import UserItem from "./user-item";
+import { api } from "../../../../convex/_generated/api";
 
 export const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const pages = useQuery(api.pages.getPage);
 
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<"aside">>(null);
@@ -115,7 +118,11 @@ export const Navigation = () => {
           <PanelLeftClose className="h-6 w-6" />
         </div>
         <div className="mt-4">
-          <p>Documents</p>
+          {pages?.map((page) => (
+            <p key={page._id}>
+              {page.title}
+            </p>
+          ))}
         </div>
         <div
           onMouseDown={handleMouseDown}
