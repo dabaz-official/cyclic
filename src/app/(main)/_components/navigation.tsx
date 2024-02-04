@@ -10,18 +10,18 @@ import {
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "usehooks-ts";
-import { useMutation, useQuery } from "convex/react";
+import { useMutation } from "convex/react";
 
 import { cn } from "@cyclic/lib/utils";
 import UserItem from "./user-item";
 import { api } from "../../../../convex/_generated/api";
 import { Item } from "./item";
 import { toast } from "sonner";
+import { PageList } from "./page-list";
 
 export const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const pages = useQuery(api.pages.getPage);
   const create = useMutation(api.pages.createPage);
 
   const isResizingRef = useRef(false);
@@ -153,11 +153,7 @@ export const Navigation = () => {
           <PanelLeftClose className="h-6 w-6" />
         </div>
         <div className="mt-4">
-          {pages?.map((page) => (
-            <p key={page._id}>
-              {page.title}
-            </p>
-          ))}
+          <PageList />
         </div>
         <div
           onMouseDown={handleMouseDown}
