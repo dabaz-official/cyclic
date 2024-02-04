@@ -6,6 +6,7 @@ import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 import { cn } from "@cyclic/lib/utils";
+import UserItem from "./user-item";
 
 export const Navigation = () => {
   const pathname = usePathname();
@@ -97,11 +98,12 @@ export const Navigation = () => {
       <aside
         ref={sidebarRef}
         className={cn(
-          "group/sidebar min-h-screen bg-secondary overflow-y-auto relative flex w-60 flex-col z-[99999]",
+          "group/sidebar min-h-screen bg-secondary overflow-y-auto relative flex w-60 flex-col z-[89999]",
           isResetting && "transition-all ease-in-out duration-300",
           isMobile && "w-0"
         )}
       >
+        <UserItem />
         <div
           onClick={collapse}
           role="button"
@@ -111,9 +113,6 @@ export const Navigation = () => {
           )}
         >
           <PanelLeftClose className="h-6 w-6" />
-        </div>
-        <div>
-          <p>Action items</p>
         </div>
         <div className="mt-4">
           <p>Documents</p>
