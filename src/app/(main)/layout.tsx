@@ -3,6 +3,8 @@
 import { useConvexAuth } from "convex/react";
 import { redirect } from "next/navigation";
 
+import { cn } from "@cyclic/lib/utils"
+import { fontMono, fontSans, fontSerif } from "@cyclic/app/fonts";
 import { Spinner } from "@cyclic/components/specific/spinner";
 import { Navigation } from "./_components/navigation";
 
@@ -26,7 +28,10 @@ const MainLayout = ({
   }
 
   return (
-    <div className="h-full flex dark:bg-neutral-900">
+    <div className={cn(
+      "h-full flex dark:bg-neutral-900",
+      fontSans.variable, fontMono.variable, fontSerif.variable
+    )}>
       <Navigation />
       <main className="flex-1 h-full overflow-y-auto">
         {children}
