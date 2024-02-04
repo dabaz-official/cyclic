@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 
 import "@cyclic/styles/globals.css";
 import { cn } from "@cyclic/lib/utils"
@@ -46,6 +47,7 @@ export default function RootLayout({
             defaultTheme="system"
             storageKey="cyclic-theme-2"
           >
+            <Toaster position="bottom-center" />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>
