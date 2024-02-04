@@ -19,9 +19,9 @@ const NotesPage = () => {
     });
 
     toast.promise(promise, {
-      loading: "Creating a new note for you...",
-      success: "New note created!",
-      error: "Failed to create a new note."
+      loading: "Creating a new page for you...",
+      success: "New page created!",
+      error: "Failed to create a new page."
     })
   }
 
@@ -46,7 +46,7 @@ const NotesPage = () => {
       </h2>
       <Button onClick={onCreate} className="mt-4">
         <Plus className="h-4 w-4 mr-2" />
-        Create a note
+        Create a page
       </Button>
     </div>
   );
