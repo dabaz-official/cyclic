@@ -28,14 +28,14 @@ const NotesPage = () => {
   return (
     <div className="h-full min-h-screen flex flex-col items-center justify-center">
       <Image
-        src="/images/notes/empty-light.svg"
+        src="/images/pages/empty-light.svg"
         height="200"
         width="200"
         alt="Empty"
         className="dark:hidden"
       />
       <Image
-        src="/images/notes/empty-dark.svg"
+        src="/images/pages/empty-dark.svg"
         height="200"
         width="200"
         alt="Empty"

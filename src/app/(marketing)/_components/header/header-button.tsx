@@ -32,7 +32,7 @@ export default function HeaderButton() {
       {isAuthenticated && !isLoading && (
         <>
           <Button size="md" asChild className="bg-white text-black hover:bg-neutral-200">
-            <Link href="/notes">
+            <Link href="/pages">
               Enter Cyclic -&gt;
             </Link>
           </Button>
