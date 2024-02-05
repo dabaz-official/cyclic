@@ -29,7 +29,7 @@ const MainLayout = ({
 
   return (
     <div className={cn(
-      "h-full flex dark:bg-neutral-900",
+      "h-full flex bg-neutral-900",
       fontSans.variable, fontMono.variable, fontSerif.variable
     )}>
       <Navigation />

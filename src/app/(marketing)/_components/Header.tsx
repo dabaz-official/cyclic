@@ -7,16 +7,16 @@ import { Button } from "@cyclic/components/ui/button";
 import { useScrollTop } from "@cyclic/hooks/use-scroll-top";
 import { cn } from "@cyclic/lib/utils";
 import { Spinner } from "@cyclic/components/specific/spinner";
-import { Logo } from "./Logo";
+import { Logo } from "./logo";
 import Link from "next/link";
 
-export default function MarketingHeader() {
+export default function Header() {
   const { isAuthenticated, isLoading } = useConvexAuth();
   const scrolled = useScrollTop();
 
   return (
     <header className={cn(
-      "bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50", scrolled && "border-b border-neutral-200 shadow-sm"
+      "bg-black/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50", scrolled && "border-b border-neutral-800 shadow-sm"
     )}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
@@ -34,12 +34,12 @@ export default function MarketingHeader() {
           {!isAuthenticated && !isLoading && (
             <>
               <SignInButton mode="modal">
-                <button className="block text-sm lg:text-md font-medium leading-6 text-neutral-900 hover:underline transition">
+                <button className="block text-sm lg:text-md font-medium leading-6 text-neutral-100 hover:underline transition">
                   Log in
                 </button>
               </SignInButton>
               <SignUpButton mode="modal">
-                <Button size="md" className="bg-black text-white hover:bg-neutral-800">
+                <Button size="md" className="bg-white text-black hover:bg-neutral-200">
                   Sign up
                 </Button>
               </SignUpButton>
@@ -47,7 +47,7 @@ export default function MarketingHeader() {
           )}
           {isAuthenticated && !isLoading && (
             <>
-              <Button size="md" asChild className="bg-black text-white hover:bg-neutral-800">
+              <Button size="md" asChild className="bg-white text-black hover:bg-neutral-200">
                 <Link href="/notes">
                   Enter Cyclic -&gt;
                 </Link>

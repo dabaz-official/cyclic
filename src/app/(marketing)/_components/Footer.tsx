@@ -1,5 +1,5 @@
 import Cookies from "./Cookies";
-import { Logo } from "./Logo"
+import { Logo } from "./logo"
 
 const navigation = {
   main: [

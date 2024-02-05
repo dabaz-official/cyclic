@@ -4,7 +4,7 @@ export const Logo = () => {
   return (
     <div className="flex items-center justify-center text-center gap-x-2">
       <Image
-        src="/images/logos/favicon-light.svg"
+        src="/images/logos/logo-dark.svg"
         height="40"
         width="40"
         alt="Logo"

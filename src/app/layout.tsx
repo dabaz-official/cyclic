@@ -38,18 +38,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
+        "min-h-screen font-sans antialiased",
         fontSans.variable, fontMono.variable, fontSerif.variable
       )}>
-        <ConvexClientProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            storageKey="cyclic-theme-2"
-          >
-            <Toaster position="bottom-center" />
-            {children}
-          </ThemeProvider>
+        <ConvexClientProvider>  
+          <Toaster position="bottom-center" />
+          {children}
         </ConvexClientProvider>
       </body>
     </html>
