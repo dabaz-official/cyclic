@@ -1,10 +1,8 @@
-import { cn } from "@cyclic/lib/utils";
+"use client";
+
 import React from "react";
-import { BentoGrid, BentoGridItem } from "@cyclic/components/ui/bento-grid";
-import {
-  IconClipboardCopy,
-  IconFileBroken,
-} from "@tabler/icons-react";
+
+import { BentoGrid } from "@cyclic/components/ui/bento-grid";
 import { Security } from "./security";
 import { Design } from "./design";
 import { Innovation } from "./innovation";

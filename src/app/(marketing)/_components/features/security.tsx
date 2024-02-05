@@ -12,7 +12,7 @@ export function Security() {
           The Security of Notes
         </div>
         <div className="font-sans font-normal text-xs text-neutral-300">
-          We safeguard your data with robust encryption, reinforce access through multi-factor authentication, and more.
+          We safeguard your data with robust encryption, 2FA, and more.
         </div>
       </div>
     </div>
