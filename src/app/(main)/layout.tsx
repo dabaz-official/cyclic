@@ -7,6 +7,7 @@ import { cn } from "@cyclic/lib/utils"
 import { fontMono, fontSans, fontSerif } from "@cyclic/app/fonts";
 import { Spinner } from "@cyclic/components/specific/spinner";
 import { Navigation } from "./_components/navigation";
+import { ThemeProvider } from "@cyclic/components/providers/theme-provider";
 
 const MainLayout = ({
   children
@@ -29,12 +30,18 @@ const MainLayout = ({
 
   return (
     <div className={cn(
-      "h-full flex bg-neutral-900",
+      "h-full flex bg-neutral-100 dark:bg-neutral-900",
       fontSans.variable, fontMono.variable, fontSerif.variable
     )}>
       <Navigation />
       <main className="flex-1 h-full overflow-y-auto">
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          {children}
+        </ThemeProvider>
       </main>
     </div>
   );

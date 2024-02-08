@@ -4,7 +4,6 @@ import { Toaster } from "sonner";
 import "@cyclic/styles/globals.css";
 import { cn } from "@cyclic/lib/utils"
 import { fontMono, fontSans, fontSerif } from "./fonts";
-import { ThemeProvider } from "@cyclic/components/providers/theme-provider";
 import { ConvexClientProvider } from "@cyclic/components/providers/convex-provider";
 
 export const metadata: Metadata = {

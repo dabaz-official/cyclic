@@ -13,7 +13,7 @@ export default function HeaderButton() {
   return (
     <div className="flex flex-1 items-center justify-end gap-x-6">
       {isLoading && (
-        <Spinner size="lg" />
+        <></>
       )}
       {!isAuthenticated && !isLoading && (
         <>

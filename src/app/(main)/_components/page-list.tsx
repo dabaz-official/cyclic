@@ -8,7 +8,6 @@ import { useQuery } from "convex/react";
 import { Doc, Id } from "../../../../convex/_generated/dataModel";
 import { api } from "../../../../convex/_generated/api";
 
-import { Skeleton } from "@cyclic/components/ui/skeleton";
 import { Item } from "./item";
 import { cn } from "@cyclic/lib/utils";
 

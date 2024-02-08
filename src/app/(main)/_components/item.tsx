@@ -14,6 +14,7 @@ import { Id } from "../../../../convex/_generated/dataModel";
 import { cn } from "@cyclic/lib/utils";
 import { Skeleton } from "@cyclic/components/ui/skeleton";
 import { api } from "../../../../convex/_generated/api";
+import { DropdownMenu, DropdownMenuTrigger } from "@cyclic/components/ui/dropdown-menu";
 
 interface ItemProps {
   id?: Id<"pages">;
@@ -80,19 +81,29 @@ export const Item = ({
         paddingLeft: level ? `${(level * 12) + 12}px` : "12px"
       }}
       className={cn(
-        "group min-h-[27px] text-sm py-2 pr-3 w-full hover:bg-primary/5 flex items-center text-muted-foreground font-medium",
+        "group min-h-[27px] text-sm py-2 pr-1 w-full hover:bg-primary/5 flex items-center text-muted-foreground font-medium",
         active && "bg-primary/5 text-primary"
       )}
     >
       {!!id && (
-        <div
-          role="button"
-          className="h-full rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600 mr-1"
-          onClick={handleExpand}
-        >
-          <ChevronIcon
-            className="h-4 w-4 shrink-0 text-muted-foreground/50"
-          />
+        <div className="ml-auto flex items-center gap-x-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              onClick={(e) => e.stopPropagation()}
+              asChild
+            >
+              
+            </DropdownMenuTrigger>
+          </DropdownMenu>
+          <div
+            role="button"
+            className="h-full rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600 mr-1"
+            onClick={handleExpand}
+          >
+            <ChevronIcon
+              className="h-4 w-4 shrink-0 text-muted-foreground/50"
+            />
+          </div>
         </div>
       )}
       {pageIcon ? (
@@ -113,7 +124,7 @@ export const Item = ({
         </kbd>
       )}
       {!!id && (
-        <div className="ml-auto flex items-center gap-x-2">
+        <div className="ml-auto flex gap-x-2">
           <div
             role="button"
             onClick={onCreate}
