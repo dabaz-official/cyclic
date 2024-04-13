@@ -5,7 +5,6 @@ import Spotlight from "@cyclic/components/ui/spotlight";
 import { useConvexAuth } from "convex/react";
 import { HeroHeading } from "./hero-heading";
 import { HeroButton } from "./hero-button";
-import { HeroText } from "./hero-text";
 
 export function Hero() {
   return (
@@ -16,7 +15,6 @@ export function Hero() {
       />
       <div className="p-4 max-w-4xl mx-auto relative z-10 w-full my-auto text-center -space-y-10 sm:-space-y-4">
         <HeroHeading />
-        <HeroText />
         <HeroButton />
       </div>
     </div>

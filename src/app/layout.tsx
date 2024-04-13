@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: "Cyclic | Your Minimalist Note-Taking App",
     template: "%s | Cyclic"
   },
-  description: "A minimalist tool for note-taking and note-management. Embrace a world of clarity and focus, where every note propels you towards seamless productivity.",
+  description: "Cyclic is an advanced note-taking system designed with the modern user’s need for privacy and efficiency in mind.",
   icons: {
     icon: [
       {
