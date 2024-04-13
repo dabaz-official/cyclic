@@ -5,6 +5,7 @@ import {
   FilePlus,
   PanelLeftClose,
   PanelLeftOpen,
+  Plus,
   Search,
   Settings
 } from "lucide-react";
@@ -154,6 +155,11 @@ export const Navigation = () => {
         </div>
         <div className="mt-4">
           <PageList />
+          <Item
+            onClick={handleCreate}
+            icon={Plus}
+            label="Add a page"
+          />
         </div>
         <div
           onMouseDown={handleMouseDown}

@@ -46,7 +46,7 @@ const NotesPage = () => {
       </h2>
       <Button onClick={onCreate} className="mt-4">
         <Plus className="h-4 w-4 mr-2" />
-        Create a page
+        Add a page
       </Button>
     </div>
   );
