@@ -6,8 +6,10 @@ import { redirect } from "next/navigation";
 import { cn } from "@cyclic/lib/utils"
 import { fontMono, fontSans, fontSerif } from "@cyclic/app/fonts";
 import { Spinner } from "@cyclic/components/specific/spinner";
-import { Navigation } from "./_components/navigation";
 import { ThemeProvider } from "@cyclic/components/providers/theme-provider";
+import { SearchCommand } from "@cyclic/components/specific/search-command";
+
+import { Navigation } from "./_components/navigation";
 
 const MainLayout = ({
   children
@@ -40,6 +42,7 @@ const MainLayout = ({
           defaultTheme="system"
           enableSystem
         >
+          <SearchCommand />
           {children}
         </ThemeProvider>
       </main>
