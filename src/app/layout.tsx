@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
+import { fontMono, fontSans, fontSerif } from "./fonts";
 
 import "@cyclic/styles/globals.css";
 import { cn } from "@cyclic/lib/utils"
-import { fontMono, fontSans, fontSerif } from "./fonts";
 import { ConvexClientProvider } from "@cyclic/components/providers/convex-provider";
+import { ModalProvider } from "@cyclic/components/modals/modal-provider";
 
 export const metadata: Metadata = {
   title: {
@@ -42,6 +43,7 @@ export default function RootLayout({
       )}>
         <ConvexClientProvider>  
           <Toaster position="bottom-center" />
+          <ModalProvider />
           {children}
         </ConvexClientProvider>
       </body>

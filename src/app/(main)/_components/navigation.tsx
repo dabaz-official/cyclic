@@ -27,8 +27,10 @@ import { toast } from "sonner";
 import { PageList } from "./page-list";
 import { TrashBox } from "./trash-box";
 import { useSearch } from "@cyclic/hooks/use-search";
+import { useSettings } from "@cyclic/hooks/use-settings";
 
 export const Navigation = () => {
+  const settings = useSettings();
   const search = useSearch();
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -145,7 +147,7 @@ export const Navigation = () => {
         <Item
           label="Settings"
           icon={Settings}
-          onClick={()=>{}}
+          onClick={settings.onOpen}
         />
         <Item
           onClick={handleCreate}
