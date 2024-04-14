@@ -10,7 +10,7 @@ import {
   Settings,
   Trash
 } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useMediaQuery } from "usehooks-ts";
 import { useMutation } from "convex/react";
 
@@ -28,10 +28,12 @@ import { PageList } from "./page-list";
 import { TrashBox } from "./trash-box";
 import { useSearch } from "@cyclic/hooks/use-search";
 import { useSettings } from "@cyclic/hooks/use-settings";
+import { Navbar } from "./navbar";
 
 export const Navigation = () => {
   const settings = useSettings();
   const search = useSearch();
+  const params = useParams();
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const create = useMutation(api.pages.createPage);
@@ -197,9 +199,16 @@ export const Navigation = () => {
           isMobile && "left-0 w-full"
         )}
       >
-        <nav className="bg-transparent px-3 py-2 w-full">
-          {isCollapsed && <PanelLeftOpen onClick={resetWidth} role="button" className="h-6 w-6 text-muted-foreground" />}
-        </nav>
+        {!!params.pageId ? (
+          <Navbar
+            isCollapsed={isCollapsed}
+            onResetWidth={resetWidth}
+          />
+        ) : (
+          <nav className="bg-transparent px-3 py-2 w-full">
+            {isCollapsed && <PanelLeftOpen onClick={resetWidth} role="button" className="h-6 w-6 text-muted-foreground" />}
+          </nav>
+        )}
       </div>
     </>
   )
