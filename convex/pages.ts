@@ -238,3 +238,31 @@ export const getSearch = query({
     return pages;
   }
 });
+
+export const getById = query({
+  args: { pageId: v.id("pages") },
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
+    const page = await ctx.db.get(args.pageId);
+
+    if (!page) {
+      throw new Error("Page not found");
+    }
+
+    if (page.isPublished && !page.isArchived) {
+      return page;
+    }
+
+    if (!identity) {
+      throw new Error("You don't have access to this page");
+    }
+
+    const userId = identity.subject;
+
+    if (page.userId !== userId) {
+      throw new Error("You don't have access to this page");
+    }
+
+    return page;
+  }
+});
