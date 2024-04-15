@@ -5,6 +5,7 @@ import { ImagePlus, SmilePlus, X } from "lucide-react";
 import { useMutation } from "convex/react";
 import TextAreaAutosize from "react-textarea-autosize";
 
+import { useCoverImage } from "@cyclic/hooks/use-cover-image";
 import { Doc } from "../../../convex/_generated/dataModel";
 import { Button } from "@cyclic/components/ui/button";
 import { IconPicker } from "@cyclic/components/page/icon-picker";
@@ -25,6 +26,8 @@ export const Toolbar = ({
 
   const update = useMutation(api.pages.update);
   const removeIcon = useMutation(api.pages.removeIcon);
+
+  const coverImage = useCoverImage();
 
   const enableInput = () => {
     if (preview) return;
@@ -110,7 +113,7 @@ export const Toolbar = ({
             className="text-muted-foreground text-xs"
             variant="outline"
             size="sm"
-            onClick={() => {}}
+            onClick={coverImage.onOpen}
           >
             <ImagePlus className="h-4 w-4 mr-2" />
             Add cover
