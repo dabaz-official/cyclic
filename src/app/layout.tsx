@@ -6,6 +6,7 @@ import "@cyclic/styles/globals.css";
 import { cn } from "@cyclic/lib/utils"
 import { ConvexClientProvider } from "@cyclic/components/providers/convex-provider";
 import { ModalProvider } from "@cyclic/components/modals/modal-provider";
+import { EdgeStoreProvider } from "@cyclic/lib/edgestore";
 
 export const metadata: Metadata = {
   title: {
@@ -42,9 +43,11 @@ export default function RootLayout({
         fontSans.variable, fontMono.variable, fontSerif.variable
       )}>
         <ConvexClientProvider>  
-          <Toaster position="bottom-center" />
-          <ModalProvider />
-          {children}
+          <EdgeStoreProvider>
+            <Toaster position="bottom-center" />
+            <ModalProvider />
+            {children}
+          </EdgeStoreProvider>
         </ConvexClientProvider>
       </body>
     </html>
