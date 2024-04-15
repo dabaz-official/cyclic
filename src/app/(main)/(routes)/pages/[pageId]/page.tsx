@@ -1,6 +1,6 @@
 "use client";
 
-import { useQuery } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
 
 import { api } from "../../../../../../convex/_generated/api";
 import { Id } from "../../../../../../convex/_generated/dataModel";
@@ -21,6 +21,15 @@ const PageIdPage = ({
   const page = useQuery(api.pages.getById, {
     pageId: params.pageId,
   });
+
+  const update = useMutation(api.pages.update);
+
+  const onChange = (content: string) => {
+    update({
+      id: params.pageId,
+      content
+    });
+  };
 
   if (page === undefined) {
     return (
@@ -51,7 +60,7 @@ const PageIdPage = ({
       <div className="md:max-w-3xl lg:max-w-4xl mx-auto">
         <Toolbar initialData={page} />
         <Editor
-          onChange={() => {}}
+          onChange={onChange}
           initialContent={page.content}
         />
       </div>
