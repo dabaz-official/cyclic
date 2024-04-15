@@ -7,6 +7,7 @@ import { Id } from "../../../../../../convex/_generated/dataModel";
 import { Toolbar } from "@cyclic/components/page/toolbar";
 import { Cover } from "@cyclic/components/page/cover";
 import { Skeleton } from "@cyclic/components/ui/skeleton";
+import { Editor } from "@cyclic/components/page/editor";
 
 interface PageIdPageProps {
   params: {
@@ -49,6 +50,10 @@ const PageIdPage = ({
       <Cover url={page.coverImage} />
       <div className="md:max-w-3xl lg:max-w-4xl mx-auto">
         <Toolbar initialData={page} />
+        <Editor
+          onChange={() => {}}
+          initialContent={page.content}
+        />
       </div>
     </div>
   )
