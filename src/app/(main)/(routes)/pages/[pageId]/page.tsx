@@ -1,13 +1,14 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useMutation, useQuery } from "convex/react";
+import { useMemo } from "react";
 
 import { api } from "../../../../../../convex/_generated/api";
 import { Id } from "../../../../../../convex/_generated/dataModel";
 import { Toolbar } from "@cyclic/components/page/toolbar";
 import { Cover } from "@cyclic/components/page/cover";
 import { Skeleton } from "@cyclic/components/ui/skeleton";
-import { Editor } from "@cyclic/components/page/editor";
 
 interface PageIdPageProps {
   params: {
@@ -18,6 +19,8 @@ interface PageIdPageProps {
 const PageIdPage = ({
   params
 }: PageIdPageProps) => {
+  const Editor = useMemo(() => dynamic(() => import("@cyclic/components/page/editor"), { ssr: false }),[]);
+
   const page = useQuery(api.pages.getById, {
     pageId: params.pageId,
   });
