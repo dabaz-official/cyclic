@@ -11,6 +11,7 @@ import { useCoverImage } from "@cyclic/hooks/use-cover-image";
 import { api } from "../../../convex/_generated/api";
 import { Id } from "../../../convex/_generated/dataModel";
 import { useEdgeStore } from "@cyclic/lib/edgestore";
+import { Skeleton } from "@cyclic/components/ui/skeleton";
 
 interface CoverImageProps {
   url?: string;
@@ -75,5 +76,11 @@ export const Cover = ({
         </div>
       )}
     </div>
+  )
+}
+
+Cover.Skeleton = function CoverSkeleton() {
+  return (
+    <Skeleton className="w-full h-[12vh]" />
   )
 }
