@@ -120,7 +120,7 @@ export const Toolbar = ({
           </Button>
         )}
       </div>
-      {!isEditing && !preview ? (
+      {isEditing && !preview ? (
         <TextAreaAutosize
           ref={inputRef}
           onBlur={disableInput}
