@@ -14,13 +14,13 @@ import {
 
 interface ConfirmModalProps {
   children: React.ReactNode;
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
   onConfirm: () => void;
-  title: string;
-  content: string;
-  confirmText: string;
-  cancelText: string;
+  title?: string;
+  content?: string;
+  confirmText?: string;
+  cancelText?: string;
 };
 
 export const ConfirmModal = ({
