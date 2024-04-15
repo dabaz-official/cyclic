@@ -32,15 +32,15 @@ const NotesPage = () => {
     <div className="h-full min-h-screen flex flex-col items-center justify-center">
       <Image
         src="/images/pages/empty-light.svg"
-        height="200"
-        width="200"
+        height="160"
+        width="160"
         alt="Empty"
         className="dark:hidden"
       />
       <Image
         src="/images/pages/empty-dark.svg"
-        height="200"
-        width="200"
+        height="160"
+        width="160"
         alt="Empty"
         className="hidden dark:block"
       />
