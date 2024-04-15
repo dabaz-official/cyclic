@@ -99,7 +99,7 @@ export const Toolbar = ({
         {!initialData.icon && !preview && (
           <IconPicker asChild onChange={onIconSelect}>
             <Button
-              className="text-muted-foreground text-xs bg-neutral-100 dark:bg-neutral-900 hover:bg-white dark:hover:bg-neutral-800"
+              className="text-muted-foreground text-xs bg-white dark:bg-[#1F1F1F] hover:bg-neutral-100 dark:hover:bg-neutral-900"
               variant="outline"
               size="sm"
             >
@@ -110,7 +110,7 @@ export const Toolbar = ({
         )}
         {!initialData.coverImage && !preview && (
           <Button
-            className="text-muted-foreground text-xs bg-neutral-100 dark:bg-neutral-900 hover:bg-white dark:hover:bg-neutral-800"
+            className="text-muted-foreground text-xs bg-white dark:bg-[#1F1F1F] hover:bg-neutral-100 dark:hover:bg-neutral-900"
             variant="outline"
             size="sm"
             onClick={coverImage.onOpen}
