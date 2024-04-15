@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Plus } from "lucide-react";
 import { useMutation } from "convex/react";
 import { useUser } from "@clerk/clerk-react";
@@ -10,13 +11,15 @@ import { api } from "../../../../../convex/_generated/api";
 import { Button } from "@cyclic/components/ui/button";
 
 const NotesPage = () => {
+  const router = useRouter();
   const { user } = useUser();
   const create = useMutation(api.pages.createPage)
 
   const onCreate = () => {
     const promise = create({ 
       title: "Untitled"
-    });
+    })
+      .then((pageId) => router.push(`/pages/${pageId}`))
 
     toast.promise(promise, {
       loading: "Creating a new page for you...",

@@ -10,7 +10,7 @@ import {
   Settings,
   Trash
 } from "lucide-react";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { useMediaQuery } from "usehooks-ts";
 import { useMutation } from "convex/react";
 
@@ -31,6 +31,7 @@ import { useSettings } from "@cyclic/hooks/use-settings";
 import { Navbar } from "./navbar";
 
 export const Navigation = () => {
+  const router = useRouter();
   const settings = useSettings();
   const search = useSearch();
   const params = useParams();
@@ -120,7 +121,8 @@ export const Navigation = () => {
   }
 
   const handleCreate = () => {
-    const promise = create({ title: "Untitled" });
+    const promise = create({ title: "Untitled" })
+      .then((pageId) => router.push(`/pages/${pageId}`))
 
     toast.promise(promise, {
       loading: "Creating a new page for you...",
