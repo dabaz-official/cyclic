@@ -9,6 +9,7 @@ import { Id } from "../../../../convex/_generated/dataModel";
 import { Title } from "./title";
 import { Banner } from "./banner";
 import { Menu } from "./menu";
+import { Publish } from "./publish";
 
 interface NavbarProps {
   isCollapsed: boolean;
@@ -53,6 +54,7 @@ export const Navbar = ({
         <div className="flex items-center justify-between w-full">
           <Title initialData={page} />
           <div className="flex items-center gap-x-2">
+            <Publish initialData={page} />
             <Menu pageId={page._id} />
           </div>
         </div>
