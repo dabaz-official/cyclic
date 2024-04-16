@@ -43,8 +43,8 @@ export const SearchCommand = () => {
     return () => document.removeEventListener("keydown", down);
   }, [toggle]);
 
-  const onSelect = (id: string) => {
-    router.push(`/pages/${id}`);
+  const onSelect = (pageId: string) => {
+    router.push(`/pages/${pageId}`);
     onClose();
   };
 
@@ -71,6 +71,7 @@ export const SearchCommand = () => {
               value={`${page._id}-${page.title}`}
               title={page.title}
               onSelect={onSelect}
+              id={page._id}
             >
               {page.icon ? (
                 <p className="mr-2 text-[18px]">
