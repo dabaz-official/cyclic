@@ -10,7 +10,6 @@ import { EdgeStoreProvider } from "@cyclic/lib/edgestore";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "",
     default: "Cyclic | Your Minimalist Note-Taking App",
     template: "%s | Cyclic"
   },
