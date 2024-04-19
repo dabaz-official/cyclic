@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         orange: "bg-orange-600 text-orange-100 hover:bg-orange-600/90",
-        header: "focus:ring-offset-3 relative inline-flex h-fit w-fit border border-blue-100/20 bg-blue-200/10 px-4 py-2 text-blue-200 outline-none ring-orange-300 transition-colors after:absolute after: inset-0 after:animate-pulse after:bg-orange-100 after:bg-opacity-0 after:blur-md after:transition-all after:duration-500 hover:border-orange-200/40 hover: text-orange-300 after:hover:bg-opacity-15 focus:ring-2"
+        header: "focus:ring-offset-3 relative inline-flex h-fit w-fit border border-blue-100/20 bg-blue-200/10 px-4 py-2 text-blue-200 outline-none ring-orange-300 transition-colors after:absolute after: inset-0 after:animate-pulse after:bg-orange-100 after:bg-opacity-100 after:blur-md after:transition-all after:duration-500 hover:border-orange-200/40 hover: text-orange-300 after:hover:bg-opacity-15 focus:ring-2"
       },
       size: {
         default: "h-10 px-4 py-2",

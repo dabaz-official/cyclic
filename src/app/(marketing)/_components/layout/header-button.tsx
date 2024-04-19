@@ -25,8 +25,7 @@ export default function HeaderButton() {
           <SignUpButton mode="modal">
             <Button
               size="md"
-              variant="orange"
-              className="bg-white text-black hover:bg-neutral-200"
+              variant="header"
             >
               Sign up
             </Button>
