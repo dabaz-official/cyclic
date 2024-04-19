@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <header className={cn(
-      "bg-transparent fixed top-0 left-0 right-0 z-[100] py-4", scrolled && "bg-black/30 border-b border-neutral-800 shadow-sm backdrop-blur-lg"
+      "bg-transparent fixed top-0 left-0 right-0 z-[100] py-4 md:p-4", scrolled && "bg-black/80 border-b border-neutral-800 shadow-sm backdrop-blur-lg"
     )}>
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-x-6 px-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
