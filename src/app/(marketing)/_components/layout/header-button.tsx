@@ -6,6 +6,7 @@ import { SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
 import { Button } from "@cyclic/components/ui/button";
 import { Spinner } from "@cyclic/components/specific/spinner";
 import Link from "next/link";
+import ButtonLink from "./button-link";
 
 export default function HeaderButton() {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -18,31 +19,24 @@ export default function HeaderButton() {
       {!isAuthenticated && !isLoading && (
         <>
           <SignInButton mode="modal">
-            <button className="block text-sm lg:text-md font-medium leading-6 text-neutral-100 hover:text-white transition">
+            <button className="block text-md font-medium leading-6 text-neutral-100 hover:text-blue-200 transition">
               Log in
             </button>
           </SignInButton>
           <SignUpButton mode="modal">
-            <Button
-              size="md"
-              variant="header"
-            >
-              Sign up
-            </Button>
+            <ButtonLink
+              title="Sign up"
+            />
           </SignUpButton>
         </>
       )}
       {isAuthenticated && !isLoading && (
         <>
-          <Button
-            size="md"
-            asChild
-            variant="header"
-          >
-            <Link href="/pages">
-              Enter Cyclic -&gt;
-            </Link>
-          </Button>
+          <Link href="/pages">
+            <ButtonLink
+              title="Enter Cyclic"
+            />
+          </Link>
           <UserButton
             afterSignOutUrl="/"
           />
