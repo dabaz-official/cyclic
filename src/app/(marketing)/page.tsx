@@ -5,12 +5,9 @@ import Footer from "./_components/layout/footer";
 
 export default function MarketingPage() {
   return (
-    <main className="bg-black">
+    <main className="bg-black items-center mx-auto">
       <Header />
-      <div className="items-center justify-center">
-        <Hero />
-        <Features />
-      </div>
+      <Hero />
       <Footer />
     </main>
   );
