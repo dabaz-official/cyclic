@@ -6,14 +6,9 @@ import { Plus } from "lucide-react";
 import { useMutation } from "convex/react";
 import { useUser } from "@clerk/clerk-react";
 import { toast } from "sonner";
-import type { Metadata } from "next";
 
 import { api } from "../../../../../convex/_generated/api"; 
 import { Button } from "@cyclic/components/ui/button";
-
-export const metadata: Metadata = {
-  title: "Your pages",
-};
 
 const NotesPage = () => {
   const router = useRouter();
