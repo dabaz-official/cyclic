@@ -3,7 +3,6 @@
 import { useConvexAuth } from "convex/react";
 import { SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
 
-import { Button } from "@cyclic/components/ui/button";
 import { Spinner } from "@cyclic/components/specific/spinner";
 import Link from "next/link";
 import ButtonLink from "./button-link";
