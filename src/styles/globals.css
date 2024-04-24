@@ -74,3 +74,43 @@
     @apply bg-background text-foreground;
   }
 }
+
+html,
+body {
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+::selection {
+  background-color: theme("colors.blue.500");
+  color: theme("colors.blue.950");
+}
+
+.glass-container {
+  position: relative;
+}
+
+.glass-container::before {
+  @apply absolute -inset-[10px] -z-10 rounded-3xl border border-slate-100/20 bg-slate-200/10 backdrop-blur-md;
+  content: "";
+}
+
+.signal-line {
+  --rotation: 90deg;
+  @apply h-[20px] w-[1.5px] bg-gradient-to-t md:h-[1.5px] md:w-[30px] lg:w-[40px] xl:w-[50px];
+  background-color: hsla(0, 0%, 100%, 0.1);
+  background-image: linear-gradient(
+    var(--rotation),
+    rgba(255, 255, 255, 0) 50%,
+    #bfdbfe 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  background-size: 400% 400%;
+}
+
+@media (max-width: 767px) {
+  .signal-line {
+    --rotation: 0deg;
+  }
+}
