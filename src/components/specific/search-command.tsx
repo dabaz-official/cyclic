@@ -70,7 +70,7 @@ export const SearchCommand = () => {
               key={page._id}
               value={`${page._id}-${page.title}`}
               title={page.title}
-              onSelect={onSelect}
+              onSelect={() => onSelect(page._id)}
               id={page._id}
             >
               {page.icon ? (
