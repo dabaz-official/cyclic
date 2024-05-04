@@ -7,7 +7,6 @@ import {
   PanelLeftOpen,
   Plus,
   Search,
-  Settings,
   Trash,
 } from "lucide-react";
 import { useParams, usePathname, useRouter } from "next/navigation";
@@ -27,12 +26,10 @@ import { toast } from "sonner";
 import { PageList } from "./page-list";
 import { TrashBox } from "./trash-box";
 import { useSearch } from "@cyclic/hooks/use-search";
-import { useSettings } from "@cyclic/hooks/use-settings";
 import { Navbar } from "./navbar";
 
 export const Navigation = () => {
   const router = useRouter();
-  const settings = useSettings();
   const search = useSearch();
   const params = useParams();
   const pathname = usePathname();
