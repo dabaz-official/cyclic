@@ -13,11 +13,7 @@ export function HeroButton() {
   return (
     <div className="items-center mx-auto text-center">
       {isLoading && (
-        <SignInButton mode="modal">
-          <ButtonLink
-            title="Get started"
-          />
-        </SignInButton>
+        <Spinner size="sm" />
       )}
       {isAuthenticated && !isLoading && (
         <Link href="/pages">
