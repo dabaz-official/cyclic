@@ -9,6 +9,7 @@ import { Id } from "../../../../../../convex/_generated/dataModel";
 import { Toolbar } from "@cyclic/components/page/toolbar";
 import { Cover } from "@cyclic/components/page/cover";
 import { Skeleton } from "@cyclic/components/ui/skeleton";
+import { Spinner } from "@cyclic/components/specific/spinner";
 
 interface PageIdPageProps {
   params: {
