@@ -8,9 +8,6 @@ import {
 } from "@blocknote/core";
 import {
   BlockNoteView,
-  darkDefaultTheme,
-  lightDefaultTheme,
-  Theme,
   useBlockNote,
 } from "@blocknote/react";
 import "@blocknote/core/style.css";
@@ -30,25 +27,25 @@ const Editor = ({
   const { resolvedTheme } = useTheme();
   const { edgestore } = useEdgeStore();
 
-  const handleUpload = async (file: File) => {
-    const response = await edgestore.publicFiles.upload({
-      file
-    });
-
-    return response.url;
-  }
-
-  const editor: BlockNoteEditor = useBlockNote({
-    editable,
-    initialContent:
-      initialContent
-      ? JSON.parse(initialContent) as PartialBlock[]
-      : undefined,
-    onEditorContentChange(editor) {
-      onChange(JSON.stringify(editor.topLevelBlocks, null, 2));
-    },
-    uploadFile: handleUpload
+const handleUpload = async (file: File) => {
+  const response = await edgestore.publicFiles.upload({
+    file
   });
+
+  return response.url;
+}
+
+const editor: BlockNoteEditor = useBlockNote({
+  editable,
+  initialContent:
+    initialContent
+    ? JSON.parse(initialContent) as PartialBlock[]
+    : undefined,
+  onEditorContentChange(editor) {
+    onChange(JSON.stringify(editor.topLevelBlocks, null, 2));
+  },
+  uploadFile: handleUpload
+});
 
   return (
     <div>
