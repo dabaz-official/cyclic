@@ -23,9 +23,9 @@ export function HeroButton() {
         </Link>
       )}
       {!isAuthenticated && !isLoading && (
-        <SignInButton mode="modal">
+        <SignInButton afterSignInUrl="/pages">
           <ButtonLink
-            title="Get started"
+            title="Try it now"
           />
         </SignInButton>
       )}

@@ -63,7 +63,7 @@ export default function AnimatedContent() {
   );
 
   return (
-    <div className="relative text-center" ref={container}>
+    <div className="relative text-center my-12 sm:my-0" ref={container}>
       <StarGrid />
       <h1 className="hero__heading text-balance text-5xl font-medium opacity-0 md:text-6xl text-white tracking-tight mt-4 md:mt-12">
         Your Secure Note-Taking App.
@@ -71,7 +71,6 @@ export default function AnimatedContent() {
       <div className="hero__body mx-auto my-6 max-w-lg text-balance text-neutral-300 opacity-0 text-lg">
         Cyclic is an advanced note-taking system designed with the modern user’s need for privacy and efficiency in mind.
       </div>
-      <HeroButton />
       <div className="hero__image glass-container mt-16 w-fit opacity-0">
         <div className="hero__glow absolute inset-0 -z-10 bg-blue-500/30 opacity-0 blur-2xl filter" />
         <Image
