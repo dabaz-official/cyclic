@@ -7,6 +7,7 @@ import {
   PanelLeftOpen,
   Plus,
   Search,
+  Settings,
   Trash,
 } from "lucide-react";
 import { useParams, usePathname, useRouter } from "next/navigation";
@@ -142,6 +143,7 @@ export const Navigation = () => {
         <UserItem />
         <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
         <Item onClick={handleCreate} label="New page" icon={FilePlus} />
+        <Item onClick={() => {}} label="Settings" icon={Settings} />
         <div
           onClick={collapse}
           role="button"
